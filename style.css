@@ -1,0 +1,508 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+    margin: auto;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+#header {
+    /* barre de navigation */
+    background: rgb(255,255,255);
+   
+    padding-bottom: 0px;
+    
+    width: 80vw;
+}
+
+#header img {
+    /* image logo du site dans le header */
+    width: 80px;
+    height: 80px;
+    display: block;
+    position: absolute;
+
+    max-width: 500px;
+    max-height: 500px;
+
+    margin-left: 5%;
+}
+
+#header p {
+    /* le nom du site dans le header au milieu */
+    display: block;
+    text-align: center;
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    font-size: 250%;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 1;
+
+    color:rgb(63, 63, 63)
+
+}
+
+#header #menubut {
+    display: block;
+    position: absolute;
+    list-style: none;
+    text-align: center;
+    top: 2%;
+    right: 15%;
+    width: 50px;
+    height: 100px;
+    z-index: 1;
+}
+
+#header #menubut li{
+    box-sizing: content-box;
+    display: block;
+    background-color: #311b0b;
+    width: 100%;
+    height: 1.5px;
+    margin-top: 25%;
+}
+
+#header #menubut #min {
+    width: 80%;
+    transition: all ease-in-out 0.2s;
+}
+
+#header #menubut:hover > #min {
+    width: 100%;
+}
+
+#drop {
+    display: block;
+    z-index: 1;
+    list-style-type: none;
+    position: absolute;
+    right: 10%;
+    background-color: white;
+    box-shadow: rgb(156, 156, 156) 1px 2px 1px;
+    text-align: center;
+    width: 200px;
+    line-height: 250%;
+
+    opacity: 0;
+    transition: all ease-in-out 0.4s;
+    transform: translateY(20%);
+}
+
+#drop a {
+    text-decoration: none;
+    color:#311b0b;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+}
+
+#drop li:hover {
+    background-color: #e7e7e7;
+}
+
+#header #menubut:hover ~ #drop {
+    display: block;
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+#drop:hover {
+    display: block;
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+/* ----- Bannière ------ */
+
+#banner::after {
+    display: block;
+    position: relative;
+    background-image: linear-gradient(-90deg, white, transparent 25%, transparent 75%, white);
+    margin-top: -300px;
+    height: 300px;
+    width: 100%;
+    content: '';
+}
+
+#banner {
+    width: 80vw;
+}
+
+#banner img {
+    /* la bannière en dessous du header */
+    display: block;
+    float: center;
+    width: 100%;
+
+    box-shadow: inset 0 0 50px #311b0b;
+    
+    max-height: 300px;
+    
+    object-fit: cover;
+    transition: all .2s ease-in-out;
+
+}
+
+#rejoindre {
+    width: 80vw;
+}
+
+#rejoindre p {
+    /* la promesse */
+    margin: auto;
+    text-align: center;
+    line-height: 150%;
+    font-size: 150%;
+    margin-top: 3%;
+
+    color:rgb(63, 63, 63);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#rejoindre a {
+    /* le bouton 'rejoignez-nous */
+    margin: auto;
+    float: center;
+    margin-top: 2%;
+
+    display: block;
+    box-sizing: content-box;
+    width: 240px;
+    height: 25px;
+    line-height: 100%;
+    padding: 2%;
+    text-align: center;
+    background: rgb(0,255,102);
+    background: linear-gradient(0deg, rgba(0,255,102,1) 0%, rgba(0,255,174,1) 100%);
+    border-radius: 50px;
+    color: white;
+    font-size: 150%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    box-shadow: rgb(167, 167, 167) 0px 1.5px 5px;
+
+    transition: all .2s ease-in-out;
+}
+
+#rejoindre a:hover {
+    /* effet de grossissement quand on passe la souris sur le bouton rejoignez-nous */
+    background: rgb(0,255,167);
+    background: linear-gradient(0deg, rgba(0,255,167,1) 0%, rgba(0,255,221,1) 100%);
+
+    transform: scale(1.05, 1.05);
+    box-shadow: rgb(167, 167, 167) 0px 0px;
+}
+
+#rejoindre a:focus {
+    /* effet de grossissement quand on passe la souris sur le bouton rejoignez-nous */
+    box-shadow: rgb(167, 167, 167) 0px 0px;
+}
+
+#description {
+    width: 80vw;
+}
+
+#description p {
+    /* la description de l'évènement */
+    margin: auto;
+    text-align: center;
+    line-height: 150%;
+    font-size: 130%;
+    margin-top: 3%;
+
+    border-top: rgb(102, 102, 102) 1px solid;
+    border-bottom: rgb(102, 102, 102) 1px solid;
+    padding-top: 3%;
+    padding-bottom:3%;
+
+    color:rgb(124, 124, 124);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+
+#gmap_canvas{
+    width: 80vw;
+    /* la carte intéractive */
+    margin: auto;
+    display: block;
+    margin-top: 4%;
+    box-sizing:content-box;
+    border-radius: 30px;
+}
+
+#definition {
+    width: 80vw;
+}
+
+#definition h1 {
+    margin: auto;
+    text-align: center;
+    line-height: 150%;
+    font-size: 160%;
+    margin-top: 3%;
+
+    border-top: rgb(34, 34, 34) 1px solid;
+    padding-top: 3%;
+
+    color:rgb(124, 124, 124);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#definition p {
+    /* définition du billard */
+    margin: auto;
+    text-align: center;
+    line-height: 150%;
+    font-size: 120%;
+
+    padding-top: 1%;
+
+    color:rgb(124, 124, 124);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    padding-left: 5%;
+    padding-right: 5%;
+
+}
+
+#definition a {
+    /* le bouton 'rejoignez-nous */
+    margin: auto;
+    float: center;
+    margin-top: 2%;
+
+    margin-bottom: 4%;
+
+    display: block;
+    box-sizing: content-box;
+    width: 200px;
+    height: 20px;
+    line-height: 100%;
+    padding: 2%;
+    text-align: center;
+    background: rgb(0,255,102);
+    background: linear-gradient(0deg, rgba(0,255,102,1) 0%, rgba(0,255,174,1) 100%);
+    border-radius: 50px;
+    color: white;
+    font-size: 150%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    box-shadow: rgb(167, 167, 167) 0px 1.5px 5px;
+
+    transition: all .2s ease-in-out;
+}
+
+#definition a:hover {
+    /* effet de grossissement quand on passe la souris sur le bouton rejoignez-nous */
+    background: rgb(0,255,167);
+    background: linear-gradient(0deg, rgba(0,255,167,1) 0%, rgba(0,255,221,1) 100%);
+    box-shadow: rgb(167, 167, 167) 0px 0px;
+    line-height: 90%;
+    transform: scale(1.05,1.05);
+}
+
+.formulaire {
+    width: 80vw;
+}
+
+.formulaire h1 {
+    margin: auto;
+    text-align: center;
+    line-height: 150%;
+    font-size: 200%;
+
+    border-top: rgb(34, 34, 34) 1px solid;
+    padding-top: 2%;
+
+    color:rgb(124, 124, 124);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.formulaire form {
+    margin: auto;
+    text-align: center;
+    line-height: 150%;
+    font-size: 120%;
+    margin-top: 2%;
+
+    padding-top: 3%;
+    padding-bottom:1.5%;
+    color:rgb(124, 124, 124);
+    font-family: Arial, Helvetica, sans-serif;
+
+    border:rgb(97, 97, 97) 1px solid;
+    border-radius: 50px;
+
+    display: block;
+
+    width: 80%;
+    padding-left: 5%;
+    
+
+}
+
+.formulaire form input{
+    display: inline-block;
+    line-height: 250%;
+    width: 25vw;
+    padding-left: 3%;
+    padding-right: 3%;
+    border: 1px rgb(102, 102, 102) solid;
+    border-radius: 15px;
+    text-align: center;
+    
+}
+
+
+
+.formulaire ul {
+    width: 105%;
+    text-align: center;
+    margin: auto;
+}
+
+.formulaire li {
+    width: 49%;
+}
+
+.formulaire form #gauche {
+    align-items: left;
+    text-align: left;
+    display: inline-block;
+    line-height: 200%;
+}
+
+.formulaire form #droite {
+    align-items: right;
+    text-align: left;
+    display: inline-block;
+    line-height: 200%;
+}
+
+.formulaire form #conditions {
+    align-items: left;
+    text-align: left;
+    margin-top: 2%;
+    font-size: 100%;
+    display: inline-block;
+    margin-right: 22.5%;
+    color:rgb(34, 34, 34);
+
+}
+
+.formulaire form a {
+    text-decoration: none;
+    color: rgb(0,255,167)
+}
+
+.formulaire form #confirmer {
+    margin-top: 2%;
+    margin-right: 11.1%;
+    align-items: right;
+
+    display: inline-block;
+    box-sizing: content-box;
+    width: 180px;
+    height: 20px;
+    line-height: 50%;
+    padding: 2%;
+    text-align: center;
+    background: rgb(0,255,102);
+    background: linear-gradient(0deg, rgba(0,255,102,1) 0%, rgba(0,255,174,1) 100%);
+    border-radius: 50px;
+    color: white;
+    font-size: 150%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    box-shadow: rgb(167, 167, 167) 0px 1.5px 5px;
+    border: 0px rgb(102, 102, 102) solid;
+
+    transition: all .2s ease-in-out;
+}
+
+.formulaire form #confirmer:hover {
+    /* effet de grossissement quand on passe la souris sur le bouton rejoignez-nous */
+    background: rgb(0,255,167);
+    background: linear-gradient(0deg, rgba(0,255,167,1) 0%, rgba(0,255,221,1) 100%);
+    box-shadow: rgb(167, 167, 167) 0px 0px 0px;
+    transform: scale(1.05,1.05);
+}
+
+#footer {
+    border-top: rgb(102, 102, 102) 1px solid;
+    margin-top: 5%;
+    background: rgb(231, 231, 231);
+    align-items: right;
+    text-align: right;
+    padding-right: 5%;
+}
+
+#footer img {
+    margin-right: 4%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    object-fit: stretch;
+
+    width: 50px;
+    height: 50px;
+    transition: transform ease-in-out 0.2s;
+}
+
+#footer img:hover {
+    transform: scale(1.05, 1.05);
+}
+
+#footer #twitter {
+    height: 45px;
+    margin-top: -5%;
+}
+
+
+#totop {
+    display:none;
+    position: fixed;
+    text-align: center;
+    box-sizing: content-box;
+    right: 3%;
+    bottom: 5%;
+
+    background-color: white;
+    border: none;
+
+    border-radius: 50px;
+    box-shadow: #5a5a5a 0px 1px 4px;
+    border: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    text-decoration: none;
+    text-decoration-color: #311b0b;
+    color:#311b0b;
+    
+
+    width: 4%;
+    height: 8%;
+    line-height: 100%;
+
+    transition: all ease-in-out 0.1s;
+
+}
+
+#totop:hover {
+    background-color: rgb(231, 231, 231);
+    box-shadow: #585858 0px 0px 0px;
+}
+
+#totop:focus {
+    background-color: rgb(216, 216, 216);
+}
+
